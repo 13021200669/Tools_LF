@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script>
+			function test() {
+				var txt = document.getElementById("result");
+				var t = document.createTextNode("执行中……");
+				txt.appendChild(t);
+			}
+		</script>
+		<style type="text/css">
+			table {
+				margin: auto;
+			}
+
+			tr {
+				width: 80px;
+			}
+		</style>
+	</head>
+	<body>
+		<form name="AccountCopyForm"
+			action="http://10.0.2.248:8081/ifadmin/lfadmin/admincp.php?mod=mysql&act=importdata2inner"
+			onsubmit="return test()" method="post">
+			<table>
+				<tr>
+					<td>
+						原服务器：
+					</td>
+					<td>
+						<input class="TextArea2" type="text" name="sid" value="888">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						原UID：
+					</td>
+					<td>
+						<input class="TextArea1" type="text" name="uid" value="">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						目标服务器：
+					</td>
+					<td>
+						<input class="TextArea2" type="text" name="newsid" value="888">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						目标UID：
+					</td>
+					<td>
+						<input class="TextArea1" type="text" name="newuid" value="">
+					</td>
+				</tr>
+				<input type="hidden" name="subact" value="export" />
+				<tr>
+					<td>
+						<input type="submit" value="执行">
+					</td>
+					<td id="result" style="color: red;">
+
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
